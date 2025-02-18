@@ -1,1 +1,0 @@
-73% prediction accuracy. diabetes_prediction_2 has a 96% accuracy.
