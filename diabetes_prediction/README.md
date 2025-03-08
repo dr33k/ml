@@ -1,5 +1,3 @@
 ## 73% prediction accuracy.
 
-As this is the first model I ever trained off a youtube video,
-
-please see diabetes_prediction_main instead. It has a 96% accuracy
+This was merely a test. Please see diabetes_prediction_main instead. It's got 96% accuracy
