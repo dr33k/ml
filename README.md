@@ -1,1 +1,1 @@
-Personal repository for model traianing notebooks.
+Personal repository for model training notebooks.
