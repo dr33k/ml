@@ -1,6 +1,6 @@
 ## Support Vector Model
 
-### Accuracy: 96%
+### Accuracy: 95%
 
 ### Scope: Diabetes Mellitus Prediction
 

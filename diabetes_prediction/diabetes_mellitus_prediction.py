@@ -53,10 +53,58 @@ print('Males: ', males['diabetes'].value_counts())
 """4461 out of 58552 women are diabetic
 
 4093 out of 41430 men are diabetic
+
+Drop rows where Smoking History == 'No Info'
 """
 
-#Mean value of each column after grouping by diabetes column
-diabetes_data.drop(columns=['gender', 'smoking_history'], axis=1).groupby('diabetes').mean()
+diabetes_data = diabetes_data[diabetes_data['smoking_history'] != 'No Info']
+
+"""Drop rows where Gender == 'Other'"""
+
+diabetes_data = diabetes_data[diabetes_data['gender'] != 'Other']
+
+"""Display Head"""
+
+diabetes_data.head()
+
+"""Encode Non numeric data
+---
+
+Gender
+---
+
+Female: 0
+
+Male: 1
+
+
+
+
+Smoking History
+---
+
+Never smoked: 0
+
+Current smoker: 1
+
+Former smoker: 2
+
+Has ever smoked before: 3
+
+Not currently smoking: 4
+"""
+
+#Gender
+diabetes_data['gender'] = diabetes_data['gender'].replace({'Female': 0, 'Male': 1})
+
+#Smoking History
+diabetes_data['smoking_history'] = diabetes_data['smoking_history'].replace({'never': 0, 'current': 1, 'former': 2, 'ever': 3, 'not current': 4})
+
+print(diabetes_data)
+
+"""Get Mean value of each column after grouping by diabetes column"""
+
+diabetes_data.groupby('diabetes').mean()
 
 """The average diabetic in this data is 60 years of age with a higher HbA1c level, glucose level and hypertension level"""
 
@@ -66,44 +114,7 @@ B = diabetes_data['diabetes']
 print(A)
 print(B)
 
-#encoding non numeric values
-#Gender
-A['gender'] = A['gender'].replace({'Female': 0, 'Male': 1, 'Other': 2})
-
-#Smoking History
-A['smoking_history'] = A['smoking_history'].replace({'No Info': 0, 'never': 1, 'current': 2, 'former': 3, 'ever': 4, 'not current': 5})
-
-print(A)
-
-"""Data encoding for string values
-
-Gender
-
-Female: 0
-
-Male: 1
-
-Other: 2
-
-
-Smoking History
-
-
-No Info: 0
-
-
-Never smoked: 1
-
-Current smoker: 2
-
-Former smoker: 3
-
-Has ever smoked before: 4
-
-Not currently smoking: 5
-
-Data Preprocessing
-"""
+"""Data Preprocessing"""
 
 #Data standardization
 scaler = StandardScaler()
