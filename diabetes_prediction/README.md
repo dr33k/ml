@@ -4,6 +4,8 @@
 
 ### Scope: Diabetes Mellitus Prediction
 
+Tools: numpy, pandas, sklearn, pickle
+
 The predictions are made based on the following criteria:
 
 * Gender
