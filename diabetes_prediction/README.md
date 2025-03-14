@@ -13,4 +13,6 @@ The predictions are made based on the following criteria:
 * Smoking_history: Ever, Never, Former...
 * BMI
 * HbA1c level
-* Blood_glucose_leve
+* Blood_glucose_level
+
+The dataset for training was gotten from Kaggle here: https://www.kaggle.com/datasets/iammustafatz/diabetes-prediction-dataset
